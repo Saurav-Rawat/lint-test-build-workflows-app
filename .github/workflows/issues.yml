@@ -1,0 +1,9 @@
+name: Output event
+# it will get triggered whenever something issue related is triggered in repository
+on: issues
+jobs:
+  output-info:
+    runs-on: ubuntu-latest
+    steps:
+      - name: output event details
+        runs: echo "${{ toJSON(github.event) }}"
